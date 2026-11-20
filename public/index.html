@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090a18"><title>EGLE AI BUILDER</title>
+<style>
+:root{color-scheme:dark;--bg:#090a18;--panel:#12152a;--line:#2c3152;--muted:#a5abc9;--purple:#8b5cf6;--blue:#4f8cff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 75% -10%,#292052 0,transparent 45%),var(--bg);color:#f5f6ff;font:15px/1.5 system-ui,Arial,sans-serif}
+header{height:68px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #252943;background:#090a18dd;position:sticky;top:0;z-index:3;backdrop-filter:blur(14px)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:850}.eagle{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(130deg,var(--purple),var(--blue));font-size:21px}.brand em{font-style:normal;color:#ad9bff}
+.badge{font-size:12px;color:#c4c8e2;border:1px solid var(--line);padding:7px 12px;border-radius:99px}
+main{max-width:1120px;margin:auto;padding:56px 22px 70px}.hero{text-align:center;max-width:780px;margin:auto}.tag{display:inline-block;color:#c8baff;background:#1b1736;border:1px solid #40356d;padding:6px 13px;border-radius:99px;font-size:12px}.hero h1{font-size:clamp(38px,6vw,66px);line-height:1.05;letter-spacing:-2px;margin:20px 0 12px}.grad{background:linear-gradient(90deg,#c4a5ff,#7bbcff,#75ede0);color:transparent;background-clip:text}.hero p{color:var(--muted);font-size:17px}
+.box{max-width:850px;margin:30px auto 18px;padding:14px;border:1px solid #3b3d66;border-radius:18px;background:linear-gradient(145deg,#191c35,#111326);box-shadow:0 20px 65px #0007}.box textarea{width:100%;height:115px;resize:vertical;background:transparent;border:0;outline:0;color:white;padding:10px;font:16px/1.5 inherit}.box textarea::placeholder{color:#7e84a6}.boxfoot{border-top:1px solid #2a2e4b;padding:12px 3px 0;display:flex;align-items:center;justify-content:space-between;gap:12px}.hint{font-size:12px;color:#969cbb}.primary{border:0;border-radius:10px;padding:12px 18px;background:linear-gradient(110deg,var(--purple),var(--blue));color:white;font-weight:750;cursor:pointer}.primary:disabled{opacity:.55}.examples{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0 42px}.example,.secondary{background:#15182d;border:1px solid var(--line);border-radius:99px;color:#c5c9df;padding:8px 12px;cursor:pointer;font-size:12px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.row h2{font-size:16px;margin:0}.status{font-size:12px;color:#9ca3c6}.workspace{border:1px solid var(--line);border-radius:15px;background:#101225;overflow:hidden}.tabs{display:flex;gap:5px;padding:10px;border-bottom:1px solid var(--line)}.tab{border:0;background:transparent;color:#a7acc8;padding:8px 13px;border-radius:8px;cursor:pointer}.tab.active{background:#29264d;color:white}.stage{padding:16px;min-height:330px}.empty{min-height:290px;display:grid;place-items:center;text-align:center;color:#9da3c0}.empty strong{display:block;color:#e5e7f7}.preview{display:none;width:100%;height:650px;border:0;border-radius:8px;background:white}.code{display:none;white-space:pre-wrap;overflow:auto;max-height:650px;padding:16px;background:#080a14;border-radius:8px;color:#b9e6d5;font:12px/1.6 ui-monospace,monospace}.actions{display:none;gap:9px;flex-wrap:wrap;margin-top:12px}.secondary{border-radius:9px;font-size:13px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.card{padding:17px;border:1px solid #292d4b;background:#12152a;border-radius:13px}.card b{display:block;margin:7px 0}.card p{margin:0;color:#9da3c1;font-size:13px}.foot{text-align:center;color:#858ba9;font-size:11px;margin-top:18px}
+@media(max-width:650px){header{padding:0 14px}.badge{display:none}main{padding:40px 14px}.hero h1{letter-spacing:-1px}.boxfoot{align-items:stretch;flex-direction:column}.primary{width:100%}.cards{grid-template-columns:1fr}.row{align-items:flex-start;flex-direction:column}.preview{height:520px}}
+</style></head>
+<body>
+<header><div class="brand"><div class="eagle">🦅</div><div>EGLE <em>AI BUILDER</em></div></div><div class="badge">✦ Prompt to Website Studio</div></header>
+<main>
+<section class="hero"><span class="tag">YOUR IDEA. YOUR WEBSITE.</span><h1>Build a website with<br><span class="grad">just one prompt.</span></h1><p>Describe your idea and let EGLE create a responsive website you can preview, edit and download.</p></section>
+<section class="box"><textarea id="prompt" placeholder="Describe the website you want...&#10;Example: Create a stylish bakery website with a menu, photo gallery and contact details."></textarea><div class="boxfoot"><span class="hint">Tip: mention your website type, colors, sections and features.</span><button class="primary" id="generate">✦ Generate Website →</button></div></section>
+<div class="examples">
+<button class="example" data-prompt="Create a modern restaurant website with menu, gallery, opening hours and contact details.">🍽 Restaurant</button>
+<button class="example" data-prompt="Create a premium fashion ecommerce storefront with categories, product cards and a cart demo.">🛍 Online store</button>
+<button class="example" data-prompt="Create a creative personal portfolio for a photographer with gallery and contact section.">🎨 Portfolio</button>
+<button class="example" data-prompt="Create a SaaS landing page for a productivity app with features, pricing and testimonials.">🚀 SaaS page</button>
+</div>
+<div class="row"><h2>Your workspace</h2><span class="status" id="status">Ready to build</span></div>
+<section class="workspace"><div class="tabs"><button class="tab active" data-tab="preview">◫ Preview</button><button class="tab" data-tab="code">&lt;/&gt; Code</button></div><div class="stage">
+<div class="empty" id="empty"><div><div style="font-size:35px">✧</div><strong>Your website will appear here</strong><span>Enter a prompt above to get started.</span></div></div>
+<iframe class="preview" id="preview" title="Generated website preview" sandbox="allow-scripts allow-forms"></iframe><pre class="code" id="code"></pre>
+</div></section>
+<div class="actions" id="actions"><button class="secondary" id="download">↓ Download HTML</button><button class="secondary" id="new">＋ New prompt</button></div>
+<section class="cards"><div class="card"><div>🤖</div><b>AI website generation</b><p>Turn a natural-language prompt into a complete HTML page.</p></div><div class="card"><div>📱</div><b>Responsive by design</b><p>Generated pages are instructed to work on mobile, tablet and desktop.</p></div><div class="card"><div>💻</div><b>Preview and download</b><p>Inspect the result and download its HTML file.</p></div></section>
+<div class="foot">EGLE AI BUILDER · AI generation requires a server-side API key and hosting setup.</div>
+</main>
+<script>
+let generatedHTML='';
+const $=id=>document.getElementById(id);
+document.querySelectorAll('.example').forEach(b=>b.onclick=()=>{$('prompt').value=b.dataset.prompt;$('prompt').focus()});
+function tab(name){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));$('preview').style.display=name==='preview'?'block':'none';$('code').style.display=name==='code'?'block':'none';$('empty').style.display=generatedHTML?'none':'grid'}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>tab(b.dataset.tab));
+$('generate').onclick=async()=>{
+ const prompt=$('prompt').value.trim();if(prompt.length<8){$('prompt').focus();$('status').textContent='Please enter a more detailed prompt.';return}
+ const btn=$('generate');btn.disabled=true;btn.textContent='Building your website…';$('status').textContent='Asking the AI to build your page…';
+ try{
+  const response=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt})});
+  const data=await response.json();if(!response.ok)throw new Error(data.error||'Generation failed');
+  generatedHTML=data.html;$('preview').srcdoc=generatedHTML;$('code').textContent=generatedHTML;$('empty').style.display='none';$('actions').style.display='flex';tab('preview');$('status').textContent='Website generated successfully.';
+ }catch(err){$('status').textContent=err.message;$('status').style.color='#ffadad'}
+ finally{btn.disabled=false;btn.textContent='✦ Generate Website →'}
+};
+$('download').onclick=()=>{if(!generatedHTML)return;const blob=new Blob([generatedHTML],{type:'text/html'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='egle-generated-website.html';a.click();URL.revokeObjectURL(url)};
+$('new').onclick=()=>{$('prompt').value='';generatedHTML='';$('preview').srcdoc='';$('code').textContent='';$('actions').style.display='none';$('empty').style.display='grid';$('status').textContent='Ready to build';$('status').style.color='';$('prompt').focus()};
+</script></body></html>
